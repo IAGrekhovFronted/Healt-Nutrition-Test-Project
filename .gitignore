@@ -1,0 +1,75 @@
+# .gitignore для dotnet-microservice (.NET + IDE + OS)
+
+# -------------------------
+# Build / bin / obj
+# -------------------------
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Publish output
+publish/
+**/publish/
+
+# -------------------------
+# Visual Studio / Rider / VSCode
+# -------------------------
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.*
+*.sln.cache
+
+# Rider
+*.sln.iml
+
+# -------------------------
+# NuGet
+# -------------------------
+*.nupkg
+packages/
+*.snupkg
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Logs and temporary
+# -------------------------
+*.log
+*.tlog
+*.log.*
+*.tmp
+
+# -------------------------
+# Generated/staticwebassets
+# -------------------------
+staticwebassets.build.json
+*.staticwebassets.*
+# If you generate Razor/Blazor artifacts, ignore them if produced in obj/bin
+**/staticwebassets/
+
+# -------------------------
+# Runtime / debugging
+# -------------------------
+*.pid
+*.seed
+*.pid.lock
+
+# -------------------------
+# appsettings local secrets
+# -------------------------
+# Keep environment-specific secrets out of git
+appsettings.*.json
+appsettings.Development.json
+appsettings.Local.json
+.env

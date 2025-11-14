@@ -33,6 +33,7 @@ services:
       - "5000:8080"
     networks:
       - app-network
+
   sensor-producer:
     build:
       context: ./sensors-emulation
@@ -40,8 +41,19 @@ services:
     environment:
       - API_URL=http://backend:8080/api/data
     depends_on:
-      backend:
-        condition: service_started
+      - backend
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
     networks:
       - app-network
 

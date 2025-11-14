@@ -1,0 +1,10 @@
+.gitignore
+.npmignore
+api.ts
+base.ts
+common.ts
+configuration.ts
+docs/SensorApi.md
+docs/SensorData.md
+git_push.sh
+index.ts

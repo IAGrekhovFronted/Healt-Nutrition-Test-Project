@@ -19,6 +19,7 @@ namespace SensorApi.Controllers
         }
 
         [HttpGet("data")]
+        [ProducesResponseType(typeof(List<SensorData>), 200)]
         public async Task<IActionResult> GetAllSensorData()
         {
             try

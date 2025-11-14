@@ -26,6 +26,7 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Host=db;Database=sensordb;Username=user;Password=password
       - ASPNETCORE_URLS=http://+:8080
+      - FRONTEND_URL=http://localhost:3000
     depends_on:
       db:
         condition: service_healthy
@@ -50,6 +51,8 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: frontend
+    environment:
+      - API_URL=http://localhost:5000
     ports:
       - "3000:3000"
     depends_on:
